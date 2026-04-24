@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AirPods Max – Преміальні бездротові навушники</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0f0f0f;
+color:white;
+scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+padding:15px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+header a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:0.3s;
+}
+
+header a:hover{
+color:#0071e3;
+}
+
+/* SALE */
+.sale-banner{
+margin-top:70px;
+background:linear-gradient(90deg,#ff004c,#ff7a00);
+text-align:center;
+padding:15px;
+font-weight:600;
+}
+
+.timer{
+font-size:22px;
+margin-top:5px;
+font-weight:800;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+url("images/photo_5_2026-04-24_01-26-45.jpg") center/cover no-repeat;
+}
+
+.hero h1{
+font-size:56px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+margin-bottom:30px;
+color:#ccc;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+border-radius:50px;
+background:#0071e3;
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#005bb5;
+transform:scale(1.05);
+}
+
+/* SECTION */
+.section{
+padding:100px 20px;
+text-align:center;
+}
+
+.features{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+margin-top:50px;
+}
+
+.feature{max-width:250px}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.product-card{
+background:linear-gradient(145deg,#1c1c1c,#111);
+border-radius:20px;
+padding:20px;
+transition:0.4s;
+position:relative;
+}
+
+.product-card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 40px rgba(0,0,0,0.7);
+}
+
+.product-card img{
+width:100%;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.badge{
+position:absolute;
+top:15px;
+left:15px;
+background:#ff004c;
+padding:6px 12px;
+border-radius:50px;
+font-size:14px;
+font-weight:600;
+}
+
+.old-price{
+text-decoration:line-through;
+color:#888;
+}
+
+.price{
+font-size:28px;
+font-weight:800;
+color:#00ff88;
+margin-top:5px;
+}
+
+.buy-btn{
+display:block;
+margin-top:15px;
+padding:12px;
+border-radius:30px;
+background:#0071e3;
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+background:#005bb5;
+transform:scale(1.05);
+}
+
+/* REVIEWS */
+.reviews{
+padding:100px 20px;
+background:#111;
+text-align:center;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+margin-top:50px;
+}
+
+.review{
+background:#1c1c1c;
+padding:30px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.review:hover{
+transform:translateY(-10px);
+}
+
+.review strong{
+display:block;
+margin-bottom:10px;
+font-size:18px;
+}
+
+/* FORM */
+form{
+max-width:500px;
+margin:40px auto;
+text-align:left;
+}
+
+input,textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:none;
+border-radius:10px;
+}
+
+input[type=submit]{
+background:#0071e3;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:black;
+text-align:center;
+padding:40px 20px;
+margin-top:60px;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:32px}
+header{padding:15px 20px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div><strong>AirPods Max</strong></div>
+<nav>
+<a href="#features">Функції</a>
+<a href="#gallery">Галерея</a>
+<a href="#reviews">Відгуки</a>
+<a href="#order">Замовити</a>
+</nav>
+</header>
+
+<div class="sale-banner">
+🔥 Акція до кінця дня – Знижка 15%
+<div class="timer" id="countdown"></div>
+</div>
+
+<section class="hero">
+<div>
+<h1>Новий рівень звуку</h1>
+<p>Активне шумопоглинання, просторове аудіо та до 20 годин автономної роботи.</p>
+<a class="btn" href="#gallery">Купити зі знижкою</a>
+</div>
+</section>
+
+<section id="features" class="section">
+<h2>Основні функції</h2>
+<div class="features">
+<div class="feature"><h3>🎧 Шумопоглинання</h3><p>Максимальне занурення у звук.</p></div>
+<div class="feature"><h3>🔋 20 годин</h3><p>Довга автономна робота.</p></div>
+<div class="feature"><h3>📡 Bluetooth 5.0</h3><p>Стабільне з'єднання.</p></div>
+<div class="feature"><h3>🎶 Просторове аудіо</h3><p>Кінотеатральний ефект.</p></div>
+</div>
+</section>
+
+<section id="gallery" class="section">
+<h2>Галерея</h2>
+<div class="gallery">
+
+<div class="product-card">
+<div class="badge">-15%</div>
+<img src="images/photo_1_2026-04-24_01-26-45.jpg">
+<div class="old-price">19 999 грн</div>
+<div class="price">16 999 грн</div>
+<a href="#order" class="buy-btn">Купити зараз</a>
+</div>
+
+<div class="product-card">
+<div class="badge">-15%</div>
+<img src="images/photo_6_2026-04-24_01-26-45.jpg">
+<div class="old-price">19 999 грн</div>
+<div class="price">16 999 грн</div>
+<a href="#order" class="buy-btn">Купити зараз</a>
+</div>
+
+<div class="product-card">
+<div class="badge">-15%</div>
+<img src="images/photo_10_2026-04-24_01-26-45.jpg">
+<div class="old-price">19 999 грн</div>
+<div class="price">16 999 грн</div>
+<a href="#order" class="buy-btn">Купити зараз</a>
+</div>
+
+<div class="product-card">
+<div class="badge">-15%</div>
+<img src="images/photo_8_2026-04-24_01-26-45.jpg">
+<div class="old-price">19 999 грн</div>
+<div class="price">16 999 грн</div>
+<a href="#order" class="buy-btn">Купити зараз</a>
+</div>
+
+</div>
+</section>
+
+<section id="reviews" class="reviews">
+<h2>Що кажуть клієнти</h2>
+
+<div class="review-grid">
+
+<div class="review">
+<strong>Андрій, Київ ⭐⭐⭐⭐⭐</strong>
+Звук просто космос. Якість на рівні студійного обладнання.
+</div>
+
+<div class="review">
+<strong>Марія, Львів ⭐⭐⭐⭐⭐</strong>
+Дуже комфортні навіть після 5 годин використання.
+</div>
+
+<div class="review">
+<strong>Олег, Харків ⭐⭐⭐⭐⭐</strong>
+Шумопоглинання працює ідеально в метро.
+</div>
+
+<div class="review">
+<strong>Ірина, Одеса ⭐⭐⭐⭐⭐</strong>
+Найкраща покупка за останній рік.
+</div>
+
+<div class="review">
+<strong>Максим, Дніпро ⭐⭐⭐⭐⭐</strong>
+Дизайн та звук на рівні Apple. Рекомендую!
+</div>
+
+<div class="review">
+<strong>Вікторія, Тернопіль ⭐⭐⭐⭐⭐</strong>
+Просто вау! Виглядають дорого та звучать ще краще.
+</div>
+
+</div>
+</section>
+
+
+<section id="order" class="section">
+<h2>Замовити зараз</h2>
+<form>
+<input type="text" placeholder="Ваше ім'я" required>
+<input type="tel" placeholder="Номер телефону" required>
+<textarea placeholder="Коментар"></textarea>
+<input type="submit" value="Замовити">
+</form>
+</section>
+
+<footer>
+<p>© 2026 AirPods Max | Телефон: +38 (067) 919-12-27</p>
+</footer>
+
+<script>
+function startCountdown(){
+const end=new Date();
+end.setHours(23,59,59);
+
+function update(){
+const now=new Date().getTime();
+const distance=end-now;
+
+const h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const m=Math.floor((distance%(1000*60*60))/(1000*60));
+const s=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML=
+h+"г "+m+"хв "+s+"с";
+
+if(distance<0){
+document.getElementById("countdown").innerHTML="Акція завершена";
+}
+}
+setInterval(update,1000);
+}
+startCountdown();
+</script>
+
+</body>
+</html>
